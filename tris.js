@@ -50,6 +50,33 @@ function changePlayer() {
     turnText.textContent = `E' il turno di ${currentPlayer}`;
 }
 function checkWinner(){
+    let roundWon = false
 
+    for(let i = 0; i < winCon.length; i++) {
+
+        const conditionWin = winCon[i];
+
+        let cell1 = options[conditionWin[0]];
+        let cell2 = options[conditionWin[1]];
+        let cell3 = options[conditionWin[2]];
+
+        if (cell1 == '' || cell2 == '' || cell3 == '') {
+            continue;
+    }
+    if(cell1 == cell2 && cell2 == cell3){
+        roundWon = true;
+        break;
+        }
+    }
+    if(roundWon){
+        turnText.textContent = `${currentPlayer} Ha vinto`;
+        running = false;
+    }
 }
-function restartGame() {}
+function restartGame() {
+    currentPlayer = "X";
+    options = ["", "", "", "", "", "", "", "", ""];
+    statusText.textContent = ` E' il turno di ${currentPlayer}`;
+    cells.forEach(cell => cell.textContent = "");
+    running = true;
+}

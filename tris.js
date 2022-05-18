@@ -1,5 +1,5 @@
 const cells = document.querySelectorAll(".tris")
-const statusText = document.querySelector("#statusText")
+const statusText = document.querySelector("#turnText")
 const restartBtn = document.querySelector("#restartBtn")
 
 const winCon = [
@@ -24,7 +24,7 @@ function initializeGame (){
 
     cells.forEach(cell => cell.addEventListener('click', cellClicked))
     restartBtn.addEventListener('click', restartGame);
-    statusText.textContent = `E' il turno di ${currentPlayer}`;
+    turnText.textContent = `E' il turno di ${currentPlayer}`;
     running = true;
 }
 function cellClicked(){
@@ -47,11 +47,30 @@ function updateCell(cell, index) {
 function changePlayer() {
 
     currentPlayer = (currentPlayer == 'X') ? 'O' : 'X'
-    statusText.textContent = `E' il turno di ${currentPlayer}`;
+    turnText.textContent = `E' il turno di ${currentPlayer}`;
 }
 function checkWinner(){
-}
+//     let roundWon = false
 
-function restartGame(){
-    
+//     for(let i = 0; i < winCon.length; i++) {
+
+//         const condition = winCon[i];
+
+//         let cellA = options[winCon[0]];
+//         let cellB = options[winCon[1]];
+//         let cellC = options[winCon[2]];
+
+//         if (cellA == '' || cellB == '' || cellC == '') {
+//             continue;
+//     }
+//     if(cellA == cellB && cellB == cellC){
+//         roundWon = true;
+//         break;
+// }
+//     }
+//     if(roundWon){
+//         turnText.textContent = `${currentPlayer} Ha vinto`
+//         running = false;
+//     }
 }
+function restartGame() {}

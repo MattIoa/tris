@@ -1,0 +1,80 @@
+html {
+    box-sizing: border-box;
+}
+
+.tris-container {
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 150px 150px 150px;
+    
+    cursor: pointer;
+    
+  
+}
+
+h1 {
+    text-align: center;
+    position: relative;
+    top: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+#gameContainer{
+    font-family: 'arial';
+    text-align: center;
+}
+
+.tris-container .tris {
+    border: 1px solid black;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+}
+
+.tris:first-child,
+.tris:nth-child(2),
+.tris:nth-child(3) {
+    border-top: none;
+}
+
+.tris:first-child {
+    border-left: none;
+}
+
+.tris:nth-child(3) {
+    border-right: none;
+}
+
+.tris:nth-child(4), .tris:nth-child(7) {
+    border-left: none;
+}
+.tris:nth-child(6), .tris:nth-child(9) {
+    border-right: none;
+}
+
+.tris:nth-child(7),
+.tris:nth-child(8),
+.tris:nth-child(9) {
+    border-bottom: none;
+    border-top: none;
+}
+
+.tris:nth-child(3),
+.tris:nth-child(6),
+.tris:nth-child(9) {
+    border-left: none;
+}
+
+button {
+    display: block;
+    position: relative;
+    margin: 50px auto;
+}
